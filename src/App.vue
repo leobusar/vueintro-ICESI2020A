@@ -8,6 +8,10 @@
               <v-btn to="/" text>Home</v-btn>
               <v-btn to="/pets" text>Pets</v-btn>
             </v-toolbar-items>
+            <v-spacer></v-spacer>
+            <router-link to="/favorites">
+                <v-icon large>loyalty</v-icon>
+            </router-link>
           </v-toolbar>
           <h1>My Pet Store</h1>
           <v-btn @click="themeSwitched = !themeSwitched">Switch theme</v-btn>
@@ -177,5 +181,9 @@ img {
   .wrapper > * {
     margin: 0;
   }
+}
+
+a {
+  text-decoration: none;
 }
 </style>

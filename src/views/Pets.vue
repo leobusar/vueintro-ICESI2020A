@@ -10,6 +10,7 @@
 </template>
 
 <script>
+// import axios from "../config/axios";
 import  { Dogs } from  '../config/dog';
 import Dog from '../components/Dog';
 
@@ -22,6 +23,18 @@ export default {
             dogs: Dogs 
         };
     },
+    created() {
+        // axios
+        //     .get("/breed/husky/images/random")
+        //     .then(response => {
+        //         console.log(response); 
+        //         const husky = this.dogs.find(dog => dog.breed=== 'husky');
+        //         husky.img = response.data.message;
+        //     })
+        //     .catch( error =>{
+        //         console.log(error);
+        //     } )
+    }
 };
 </script>
 

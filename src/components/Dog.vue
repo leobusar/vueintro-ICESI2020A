@@ -11,12 +11,27 @@
 </template>
 
 <script>
+import axios from "../config/axios";
+
 export default {
+
     props: {
         dog: {
             type: Object
         }
-    }
+    },
+    created() {
+        axios
+            .get("/breed/"+this.dog.breed+"/images/random")
+            .then(response => {
+                ///console.log(response); 
+                // const husky = this.dogs.find(dog => dog.breed=== 'husky');
+                this.dog.img = response.data.message;
+            })
+            .catch( error =>{
+                console.log(error);
+            } )
+    }    
 };
 </script>
 
