@@ -11,7 +11,7 @@
           </v-list-item-avatar>
           <v-list-item-content>{{dog.name}}</v-list-item-content>
           <v-list-item-action>
-            <v-icon>delete</v-icon>
+            <v-icon @click="removeFavorite(dog)">delete</v-icon>
           </v-list-item-action>
         </v-list-item>
       </div>
@@ -32,6 +32,11 @@ export default {
     },
     suma() {
       return this.a + this.b;
+    }
+  }, 
+  methods: {
+    removeFavorite(dog){
+        this.$store.commit('removeFavorites', dog)
     }
   }
 };

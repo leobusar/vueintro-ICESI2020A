@@ -11,7 +11,10 @@ export default new Vuex.Store({
     mutations: {
       addToFavorites(state, favorite) {
         state.favorites.push(favorite); 
-      }
+      }, 
+      removeFavorites(state, favorite) {
+        state.favorites.splice(state.favorites.indexOf(favorite), 1); 
+      },
     }, 
     // actions: {
     //   addFavorites({ commit }, favorite){

@@ -10,7 +10,9 @@
             </v-toolbar-items>
             <v-spacer></v-spacer>
             <router-link to="/favorites">
+              <v-badge color="blue lighten-1" :content="favorites.length" overlap v-model="favorites.length">
                 <v-icon large>loyalty</v-icon>
+              </v-badge>
             </router-link>
           </v-toolbar>
           <h1>My Pet Store</h1>
@@ -26,6 +28,8 @@
 </template>
 
 <script>
+import  { mapState } from 'vuex';
+
 export default {
   name: "App",
   components: {},
@@ -34,8 +38,12 @@ export default {
       themeSwitched: false,
     };
   },
-  methods: {
-  }
+  computed: {
+    // favorites() {
+    //   return this.$store.state.favorites;
+    // },
+    ...mapState(['favorites'])
+  }  
 };
 </script>
 
