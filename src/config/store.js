@@ -13,9 +13,9 @@ export default new Vuex.Store({
         state.favorites.push(favorite); 
       }
     }, 
-    actions: {
-      addFavorites({ commit }, favorite){
-        commit("addToFavorites", favorite);
-      }
-    }
+    // actions: {
+    //   addFavorites({ commit }, favorite){
+    //     commit("addToFavorites", favorite);
+    //   }
+    // }
 });
