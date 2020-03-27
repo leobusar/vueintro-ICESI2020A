@@ -2,7 +2,7 @@
   <v-container grid-list-md fluid>
       <v-row>
           <v-col cols="12" sm="4" md="3"  v-for="pet in dogs" :key="pet.breed">
-              <app-dog :dog="pet"></app-dog>
+              <app-dog :dog="pet" @addFavorite="addFavorites"></app-dog>
           </v-col>
       </v-row>
 
@@ -13,6 +13,7 @@
 // import axios from "../config/axios";
 import  { Dogs } from  '../config/dog';
 import Dog from '../components/Dog';
+import { mapActions } from 'vuex'; 
 
 export default {
     components:{
@@ -22,6 +23,9 @@ export default {
         return {
             dogs: Dogs 
         };
+    },
+    methods: {
+        ...mapActions(["addFavorites"])
     },
     created() {
         // axios

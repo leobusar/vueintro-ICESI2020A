@@ -7,6 +7,7 @@
         <p>{{ dog.breed }}</p>
       </div>
     </v-card-title>
+    <v-btn @click="$emit('addFavorite', dog)" >Add To Favorites</v-btn>
   </v-card>
 </template>
 
@@ -31,7 +32,12 @@ export default {
             .catch( error =>{
                 console.log(error);
             } )
-    }    
+    }, 
+    methods:  {
+      addToFavorites() {
+        this.$store.commit('addToFavorites', this.dog)
+      }
+    } 
 };
 </script>
 
